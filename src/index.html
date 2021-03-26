@@ -1,45 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Webpack Starter Kit</title>
 
-    <!-- Don't forget to delete this style tag. -->
-    <style>
-      body {
-        min-height: 100vh;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Image-finder</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
 
-      .intro {
-        text-align: center;
-      }
+<body>
+  <form class="search-form" id="search-form">
+    <input type="text" name="query" autocomplete="off" placeholder="Поиск фото" />
 
-      .intro h1 {
-        margin-top: 0;
-        font-weight: 500;
-        font-size: 40px;
-      }
+    <button type="submit" class="search-form-button button">Поиск</button>
+  </form>
 
-      .intro img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-      }
-    </style>
-  </head>
+  <div class="gallery-container">
+    <ul class="gallery">
+      <!-- Список <li> с карточками изображений -->
+    </ul>
+  </div>
 
-  <body>
-    <article class="intro">
-      <h1>Webpack starter kit</h1>
+  <div class="load-more-container">
+    <button type="button" class="js-load-more-button button is-hidden" data-action="load-more">
+      Показать еще
+    </button>
 
-      <!-- HTML image reference example. -->
-      <img src="./images/intro.png" alt="" width="640" />
-    </article>
-  </body>
+    <div class="spinner-border text-info is-hidden" role="status" id="spinner">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</body>
+
 </html>
