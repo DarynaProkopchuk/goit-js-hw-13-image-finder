@@ -1,6 +1,6 @@
 import './styles.css';
 import './styles.css';
-import apiService from './js/picteres';
+import apiService from './js/apiService';
 import updateCardsMarkup from './js/uppdate-card';
 
 import getRefs from './js/get-refs';
@@ -30,9 +30,10 @@ function fetchHitsSpinnerVisibility () {
     .then(hits => {
       updateCardsMarkup(hits);
       refs.loadMoreBtn.classList.remove('is-hidden');
+
       // посмотреть высоту документа:
       // console.log(document.documentElement.offsetHeight);
-      window.scrollTo({
+       window.scrollTo({
         top: document.documentElement.offsetHeight,
         behavior: 'smooth',
       });
